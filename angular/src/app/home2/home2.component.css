@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+p {
+    font-size: 16px;
+}
+
+.button-style{
+    border-radius: 5px;
+    border: none;
+    padding: .375rem 1rem;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    outline: none !important;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 25px;
+    align-items: center;
+    margin: 0.5em 0;
+    background-color:  #005595;
+    width:10em;
+  }

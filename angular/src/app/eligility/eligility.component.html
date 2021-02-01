@@ -1,0 +1,129 @@
+<div class="container page-container">
+    <div class="row">
+        <div class="col-12">
+            <h2>We are asking the following questions to determine your eligibility to receive the COVID-19 vaccine.
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="question">1. Do you live, work or volunteer in a health care setting? <i>Choose all that may
+                    apply</i> </div>
+            <br>
+            <section class="example-section">
+                <mat-checkbox class="example-margin" color="primary" (change)="onChangeCheckbox($event.checked)"
+                    [(ngModel)]="liveInHealthCareSetting" [disabled]="yesDisabled">Yes, I live in a health care setting
+                </mat-checkbox>
+            </section>
+            <div *ngIf="liveInHealthCareSetting">
+                <label class="example-margin-1">Please select any of the following that apply to you:</label>
+                <div class="example-margin-1">
+                    <select class="Rectangle" [(ngModel)]="selectedLiveInHealthCareDropdown">
+                        <option *ngFor="let value of liveInHealthCareDropdown" [value]="value">{{value}}</option>
+                    </select>
+                </div>
+            </div>
+            <section class="example-section">
+                <mat-checkbox class="example-margin" color="primary" (change)="onChangeCheckbox($event.checked)"
+                    [(ngModel)]="workInHealthCareSetting" [disabled]="yesDisabled">Yes, I work or volunteer in a health
+                    care setting
+                </mat-checkbox>
+            </section>
+            <div *ngIf="workInHealthCareSetting">
+                <label class="example-margin-1">Please select any of the following that apply to you:</label>
+                <div class="example-margin-1">
+                    <select class="Rectangle" [(ngModel)]="selectedWorkInHealthCareDropdown">
+                        <option *ngFor="let value of workInHealthCareDropdown" [value]="value">{{value}}</option>
+                    </select>
+                </div>
+            </div>
+            <section class="example-section">
+                <mat-checkbox class="example-margin" color="primary" [disabled]="noDisabled"
+                    (change)="onChangeCheckbox($event.checked)">No</mat-checkbox>
+            </section>
+        </div>
+    </div>
+    <div class="Horizontal-Rule"></div>
+    <div class="row">
+        <div class="col-12">
+            <div class="question">2. Do you work or volunteer as an EMS provider or first responder?</div>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" color="primary">
+                <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value">
+                    {{value}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+    <div class="Horizontal-Rule"></div>
+    <div class="row">
+        <div class="col-12">
+            <div class="question">3. Do you work or volunteer in a correctional setting?</div>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" color="primary">
+                <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value">
+                    {{value}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+    <div class="Horizontal-Rule"></div>
+    <div class="row">
+        <div class="col-12">
+            <div class="question">4. Do you work or volunteer in an early learning or child care setting?</div>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" color="primary"
+                [(ngModel)]="allQuestions.question4.key">
+                <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value">
+                    {{value}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <div *ngIf="allQuestions.question4.key == 'Yes'">
+                <label class="example-radio-button">Please select any of the following that apply to you:</label>
+                <div class="example-radio-button">
+                    <select class="Rectangle" [(ngModel)]="allQuestions.question4.value">
+                        <option *ngFor="let value of question4Dropdown" [value]="value">{{value}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Horizontal-Rule"></div>
+    <div class="row">
+        <div class="col-12">
+            <div class="question">5. Do you work or volunteer at a public or private K-12 school?</div>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" color="primary"
+                [(ngModel)]="allQuestions.question5.key">
+                <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value">
+                    {{value}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <div *ngIf="allQuestions.question5.key == 'Yes'">
+                <label class="example-radio-button">Please select any of the following that apply to you:</label>
+                <div class="example-radio-button">
+                    <select class="Rectangle" [(ngModel)]="allQuestions.question5.value">
+                        <option *ngFor="let value of question5Dropdown" [value]="value">{{value}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Horizontal-Rule"></div>
+    <div class="row">
+        <div class="col-12">
+            <div class="question">6. What is date of birth?</div>
+            <div class="example-radio-button">
+                <mat-form-field appearance="outline">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div style="text-align:right">
+                <button class="button-style" type="button">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; background-color: rgb(243, 247, 247);}
+body { margin: 0;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
+.mat-toolbar.mat-primary {
+    background: #005595;
+    color: #fff;
+    height: 60px;
+}
+.page-container {
+    margin: 2em;
+    padding: 0 10em;
+}
+

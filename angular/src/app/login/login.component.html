@@ -1,0 +1,27 @@
+<div class="div-center"></div>
+<mat-card>
+    <mat-card-content>
+
+        <h2>Log In</h2>
+
+        <form>
+            <mat-form-field class="full-width-input" name="email">
+                <input matInput placeholder="Email" type="email" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width-input" name="password">
+                <input matInput type="password" placeholder="Password" required>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" style="width: 100%;">Login</button>
+            <br>
+            <br>
+            <div>
+                <a [routerLink]="['/registration']" routerLinkActive="router-link-active" style="color:#097bbf">Create
+                    An Account </a>
+                <div fxFlex></div>
+                <a href="#" style="color:#097bbf">
+                    Forgot your password? </a>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

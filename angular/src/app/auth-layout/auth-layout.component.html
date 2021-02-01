@@ -1,0 +1,25 @@
+<div fxLayout="column" fxFlexFill>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row fxLayout="row" class="toolbar">
+            <img fxShow="false" fxShow.gt-sm [routerLink]="['/welcome']" routerLinkActive="router-link-active"
+                style="height: 70%; margin-right: 10px;" style="height: 70%; margin-right: 10px;"
+                src="https://www.arcgis.com/sharing/rest/content/items/5692f59e504f48ed8e006cab36dac586/resources/Seal_of_the_State_of_Hawaii.png" />
+            <span fxFlex>SOH</span>
+
+
+            <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+
+            </div>
+
+            <button mat-button [matMenuTriggerFor]="dropMenu" fxHide="false" fxHide.gt-sm>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #dropMenu="matMenu">
+
+            </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div fxFlex>
+        <router-outlet></router-outlet>
+    </div>
+</div>

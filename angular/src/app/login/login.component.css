@@ -1,0 +1,21 @@
+.div-center{
+    height: 200px;
+}
+
+.mat-raised-button {
+    background-color: green !important;
+    color: white;
+    width: 15em;
+    height: 3em;
+  }
+
+mat-form-field {
+    display: block;
+}
+
+mat-card {
+    margin-right: auto;  
+    max-width: 400px;
+    margin-left: auto;
+    text-align: center;
+}
